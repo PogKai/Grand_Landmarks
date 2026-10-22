@@ -1,0 +1,41 @@
+# Build and package output
+/build/
+/dist/
+/artifacts/
+
+# Local game/tool configuration
+/.env
+/.env.*
+!/\.env.example
+/local/
+*.user
+
+# KSP installs, logs, saves, and downloaded dependencies
+/KSP*/
+/GameData/Kopernicus/
+/GameData/KerbalKonstructs/
+/GameData/ModuleManager*.dll
+KSP.log
+Player.log
+
+# Python
+__pycache__/
+*.py[cod]
+/.venv/
+/.pytest_cache/
+/.ruff_cache/
+
+# Blender recovery and render output
+*.blend1
+*.blend2
+*.blend@
+*.autosave
+/renders/
+
+# Editors and operating systems
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+

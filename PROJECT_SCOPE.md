@@ -1,4 +1,4 @@
-# KSP Grand Landmarks: Initial Project Scope
+# Soy's Grand Landmarks: Initial Project Scope
 
 Status: planning proposal. No implementation or in-game validation has been completed.
 

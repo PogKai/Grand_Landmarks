@@ -1,10 +1,10 @@
-# KSP Grand Landmarks
+# Soy's Grand Landmarks
 
 A planned Kerbal Space Program 1 mod adding dramatic natural landmarks to Kerbin: big canyons, ravines, mountain massifs, natural arches, and rock bridges.
 
 ## Status
 
-Initial planning. This project currently contains documentation only; there is no playable build or installation package yet. The name is provisional.
+Pre-alpha scaffolding. The repository has a package layout and development scripts, but there is no playable landmark yet.
 
 ## Approach
 
@@ -24,7 +24,19 @@ Build one canyon region with branching ravines and a large stone arch. First ver
 
 ## Documentation
 
-See [PROJECT_SCOPE.md](PROJECT_SCOPE.md) for the implementation options, toolchain, prototype targets, risks, and validation plan.
+- [Project scope](PROJECT_SCOPE.md): architecture, prototype targets, risks, and acceptance checks
+- [Development setup](docs/DEVELOPMENT.md): prerequisites, repository layout, and first-time setup
+
+## Build
+
+From PowerShell 7:
+
+```powershell
+pwsh ./tools/check-environment.ps1
+pwsh ./tools/build.ps1
+```
+
+The package is written to `dist/SoysGrandLandmarks-0.1.0-dev.zip`. Generated output and local KSP installations are ignored by Git.
 
 ## Next steps
 

@@ -1,0 +1,33 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Validate repository
+        shell: pwsh
+        run: ./tools/validate.ps1
+
+      - name: Build development package
+        shell: pwsh
+        run: ./tools/build.ps1
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: SoysGrandLandmarks-development
+          path: dist/*.zip
+          if-no-files-found: error
+
