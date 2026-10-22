@@ -3,9 +3,10 @@
 ## Supported baseline
 
 - Kerbal Space Program 1.12.5 on a separate development copy
-- Kopernicus for planetary terrain changes
-- Kerbal Konstructs for placed static meshes
-- Blender for source meshes and collision meshes
+- Kopernicus release-1.12.1-251 for planetary terrain changes
+- Kerbal Konstructs 1.12.3.0 for placed static meshes
+- KittopiaTech release-1.8.1-1 for in-game Kopernicus inspection and editing
+- Blender 3.6.22 LTS for source meshes and collision meshes
 - `io_object_mu` for Blender-to-KSP `.mu` export
 - Python 3.10 or newer for repeatable terrain and asset processing
 - Git LFS for large binary source and game assets
@@ -24,6 +25,26 @@ Record the exact working versions in this document when that happens.
 6. Copy `.env.example` to `.env` and set `KSP_ROOT` to the development KSP folder.
 7. Run `pwsh ./tools/check-environment.ps1`.
 8. Run `pwsh ./tools/build.ps1` to create an installable ZIP in `dist/`.
+
+To install the portable authoring tools and Python packages automatically, run:
+
+```powershell
+pwsh ./tools/install-authoring-tools.ps1
+```
+
+This installs everything under ignored repository-local directories. It does not modify an
+existing Blender installation. Blender 3.6.22 is intentionally pinned until `io_object_mu` is
+validated end to end; changing Blender versions also changes its Python and add-on APIs.
+
+Deploy the current package to the `.env` test installation with:
+
+```powershell
+pwsh ./tools/deploy.ps1
+```
+
+The current development instance is KSP 1.12.5 at `C:\Users\Sawyer\Desktop\KSP_win64`.
+Kopernicus and KittopiaTech are managed through CKAN. The existing Kerbal Konstructs and
+ModuleManager installations are currently unmanaged and must not be overwritten casually.
 
 Do not commit KSP binaries, dependency DLLs, logs, saves, downloaded mods, or `.env`.
 

@@ -34,6 +34,7 @@ From PowerShell 7:
 ```powershell
 pwsh ./tools/check-environment.ps1
 pwsh ./tools/build.ps1
+pwsh ./tools/deploy.ps1
 ```
 
 The package is written to `dist/SoysGrandLandmarks-0.1.0-dev.zip`. Generated output and local KSP installations are ignored by Git.
